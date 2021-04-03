@@ -28,7 +28,9 @@
 /* icons */
 .fa {
     font-size: xxx-large;
+    font-size: -webkit-xxx-large;
     padding: 10px;
+    color: black;
 }
 
 

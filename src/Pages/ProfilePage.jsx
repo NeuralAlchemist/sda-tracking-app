@@ -1,19 +1,31 @@
 import { confirmAlert } from 'react-confirm-alert';
+import {useRecoilState} from "recoil";
+import {useEffect} from "react";
+
+
+import {userParcelData} from "../states/userParcelData";
 
 export default function ProfilePage() {
+    const [userParcel, setUserParcelData] = useRecoilState(userParcelData);
+    
+    useEffect(() => {
+        console.log(userParcel);
+    },[])
+
     function deleteModal() {
-        return confirmAlert({
+        confirmAlert({
             title: `Confirm to delete`,
             message: `Are you sure you want to delete?`,
             buttons: [
                 {
                     label: `No`,
-                    onClick: window.close(),
                     className: "confirm-no",
                 },
             ],
         });
     }
+
+
 
     return (
         <div className="profile-page">
