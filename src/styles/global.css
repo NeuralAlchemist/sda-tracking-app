@@ -1,6 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=SourceSansPro|NotoSansJP|Nunito);
+
 :root {
     --yellow: #e2b764;
     --light-yellow: #f0d797;
     --light-blue: #0e8fc6;
+    --mobile-small-font: 12px;
+    --mobile-medium-font: 18px;
+    --mobile-large-font: 20px;
+    --desktop-small-font: 20px;
+    --desktop-medium-font: 24px;
+    --desktop-large-font: 28px;
+    --font-source: "Source Sans Pro";
+    --font-noto: "Noto Sans JP";
+    --font-nunito: "Nunito";
 }
+
 

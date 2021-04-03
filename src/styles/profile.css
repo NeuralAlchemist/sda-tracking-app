@@ -1,0 +1,51 @@
+.profile-page {
+    margin: 10px;
+    font-size: var(--mobile-large-font);
+    font-family: var(--font-source);
+}
+
+.profile-message {
+    font-size: var(--mobile-large-font);
+    text-align: center;
+    padding: 30% 0;
+}
+
+.profile-phone-number {
+    margin: 0 10px;
+    position: relative;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#delete-phone-number {
+    position: absolute;
+    right: 5px;
+    border-radius: 50%;
+    background-color: rgb(242, 97, 97);
+    color: white;
+    border: none;
+    font-size: var(--mobile-medium-font);
+    font-weight: bold;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    bottom:10%;
+}
+
+#delete-phone-number:hover {
+    background-color: red;
+}
+
+.react-confirm-alert-button-group {
+    justify-content: space-evenly;
+}
+
+.react-confirm-alert-body {
+    width:100%;
+    padding: 5px;
+
+}
+
+.react-confirm-alert-overlay {
+    background: rgba(77, 75, 75, 0.9);
+}

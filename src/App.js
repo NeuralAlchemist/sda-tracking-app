@@ -3,8 +3,10 @@ import { faTruck, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
+import "react-confirm-alert/src/react-confirm-alert.css";
 import "./styles/App.css";
 import "./styles/global.css";
+import "./styles/profile.css";
 import ProfilePage from "./Pages/ProfilePage";
 import PackageListPage from "./Pages/PackageListPage";
 import QueryResultsPage from "./Pages/QueryResultsPage";
