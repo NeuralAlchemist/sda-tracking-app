@@ -1,3 +1,5 @@
+
+
 /* header */
 .react-tabs__tab-list {
     list-style-type: none;
@@ -6,15 +8,6 @@
     padding: 10px 0 0 0;
     margin: 0;
     background-color: var(--yellow);
-}
-
-/* content */
-.react-tabs__tab-panel {
-}
-
-.fa {
-    font-size: xxx-large;
-    padding: 10px;
 }
 
 .react-tabs__tab {
@@ -28,3 +21,15 @@
     background-color: white;
     box-shadow: 0px -9px 4px -3px rgba(0, 0, 0, 0.4);
 }
+
+/* content */
+.react-tabs__tab-panel {
+}
+
+/* icons */
+.fa {
+    font-size: xxx-large;
+    padding: 10px;
+}
+
+
