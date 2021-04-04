@@ -5,11 +5,10 @@ import {
     BrowserRouter,
     Route,
     Switch,
-    Link,
-    useLocation,
+    Link
 } from "react-router-dom";
-import { RecoilRoot, useRecoilState } from "recoil";
-import { useState, useEffect } from "react";
+import { RecoilRoot } from "recoil";
+import { useState } from "react";
 
 import "react-confirm-alert/src/react-confirm-alert.css";
 import "./styles/App.css";
@@ -18,13 +17,9 @@ import "./styles/profile.css";
 import ProfilePage from "./Pages/ProfilePage";
 import PackageListPage from "./Pages/PackageListPage";
 import QueryResultsPage from "./Pages/QueryResultsPage";
-import { tabIndexData } from "./states/tabIndexData";
 
 function App() {
     const [tabIndex, setTabIndex] = useState(0);
-    /* {window.location.pathname === "/" && setTabIndex(0)};
-    console.log(`tab index is ${tabIndex}`);
-    console.log(`current location is ${window.location.pathname}`); */
     return (
         <div className="App">
             <RecoilRoot>
