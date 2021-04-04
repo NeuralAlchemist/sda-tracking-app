@@ -4,11 +4,11 @@ import {useEffect} from "react";
 
 
 import {userParcelData} from "../states/userParcelData";
-import {tabIndexData} from "../states/tabIndexData";
+
 
 export default function ProfilePage() {
     const [userParcel, setUserParcelData] = useRecoilState(userParcelData);
-    const [tabIndex,setTabIndex] = useRecoilState(tabIndexData);
+
     
     useEffect(() => {
         console.log(userParcel);

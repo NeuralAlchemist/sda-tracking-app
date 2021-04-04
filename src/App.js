@@ -1,12 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTruck, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import {
-    BrowserRouter,
-    Route,
-    Switch,
-    Link
-} from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import { useState } from "react";
 
@@ -20,19 +15,20 @@ import QueryResultsPage from "./Pages/QueryResultsPage";
 
 function App() {
     const [tabIndex, setTabIndex] = useState(0);
+
     return (
         <div className="App">
             <RecoilRoot>
                 <BrowserRouter>
                     <Tabs
-                        className="tabs"
                         selectedIndex={tabIndex}
                         onSelect={(index) => setTabIndex(index)}
                     >
                         <TabList>
                             <Tab
                                 data-selected={
-                                    window.location.pathname === "/profile" || window.location.pathname === "/"
+                                    window.location.pathname === "/profile" ||
+                                    window.location.pathname === "/"
                                 }
                             >
                                 <Link to="/profile">
