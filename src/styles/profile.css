@@ -1,7 +1,6 @@
 .profile-page {
     margin: 10px;
     font-size: var(--mobile-large-font);
-    font-family: var(--font-source);
 }
 
 .status {

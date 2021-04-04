@@ -1,12 +1,11 @@
-import { useRecoilState } from "recoil";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import { userParcelData } from "../states/userParcelData";
 import { confirmAlert } from "react-confirm-alert";
 
 export default function ProfilePage() {
-    const [userParcel, setUserParcel] = useRecoilState(userParcelData);
-
+    const [userParcel, setUserParcel] = useState(
+        require("../data/orders.json")
+    );
     const [local, setLocal] = useState("true");
     let userName = userParcel[0].user_name;
     let userPhone = userParcel[0].user_phone;

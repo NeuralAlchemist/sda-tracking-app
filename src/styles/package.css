@@ -1,0 +1,20 @@
+.package {
+    padding: 5px;
+    border-bottom: 1px solid rgb(177, 173, 173);
+}
+
+.delivery-status {
+    text-align: center;
+    font-size: var(--mobile-large-font);
+}
+
+.package-details-grid {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(150px, 1fr) );
+    grid-column-gap:10px;
+}
+
+.sub-header{
+    font-size: var(--mobile-medium-font);
+    color: var(--light-blue);
+}
