@@ -4,20 +4,35 @@
     font-family: var(--font-source);
 }
 
+.status {
+    text-align: end;
+    color: grey;
+    font-style: italic;
+}
+.status[data-local="false"] {
+    display: none;
+}
+
 .profile-message {
     font-size: var(--mobile-large-font);
     text-align: center;
     padding: 100px 0;
 }
 
+.flex-for-phone-number {
+    display: block;
+    text-align: center;
+    text-align: -webkit-centre;
+}
 .profile-phone-number {
     margin: 0 10px;
     position: relative;
     border: 1px solid black;
     padding: 5px;
+    max-width: 400px;
+    text-align: left;
+    text-align: -webkit-left;
 }
-
-
 
 #delete-phone-number {
     position: absolute;
@@ -31,7 +46,7 @@
     padding: 0;
     width: 28px;
     height: 28px;
-    bottom:10%;
+    bottom: 10%;
 }
 
 #delete-phone-number:hover {
@@ -43,9 +58,8 @@
 }
 
 .react-confirm-alert-body {
-    width:100%;
+    width: 100%;
     padding: 5px;
-
 }
 
 .react-confirm-alert-overlay {

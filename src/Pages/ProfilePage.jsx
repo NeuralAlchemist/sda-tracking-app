@@ -1,30 +1,27 @@
-
 import { useRecoilState } from "recoil";
 import { useCallback, useEffect, useState } from "react";
 
 import { userParcelData } from "../states/userParcelData";
 import { confirmAlert } from "react-confirm-alert";
 
-
 export default function ProfilePage() {
     const [userParcel, setUserParcel] = useRecoilState(userParcelData);
-    
-    const userName = userParcel[0].user_name;
-    const userPhone = userParcel[0].user_phone;
+
+    const [local, setLocal] = useState("true");
+    let userName = userParcel[0].user_name;
+    let userPhone = userParcel[0].user_phone;
     const API_URL = "https://my.api.mockaroo.com/orders.json?key=e49e6840";
-    const getData = useCallback(async () => {
-        const data = await fetch(
-            "https://my.api.mockaroo.com/orders.json?key=e49e6840"
-        );
-        const json = await data.json();
-        setUserParcel(json);
-    }, [setUserParcel]);
 
     useEffect(() => {
-        getData();
-    }, [getData]);
-
-    
+        fetch(API_URL)
+            .then((response) => response.json())
+            .then((json) => {
+                setUserParcel(json);
+                setLocal("false");
+                userName = json[0].user_name;
+                userPhone = json[0].user_phone;
+            });
+    },[setUserParcel, setLocal]);
 
     function deleteModal() {
         confirmAlert({
@@ -40,6 +37,7 @@ export default function ProfilePage() {
     }
     return (
         <div className="profile-page">
+            <p className="status" data-local={local}>using mock-data</p>
             <p className="profile-message">
                 Welcome {userName}
                 <br />
