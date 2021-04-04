@@ -10,6 +10,15 @@ export default function Package({information}){
             data.charAt(0).toUpperCase() + data.slice(1)
         );
     }
+
+    function GetReadableDate(date){
+        return date
+            .replace(/T/, " ") 
+            .replace(/\..+/, "")
+            .replace(/Z/,"");
+    }
+    let neat_date = GetReadableDate(information.eta);
+    console.log(neat_date);
     delivery_status = Capitalize(information.status);
     return(
         <article className="package">
@@ -23,7 +32,7 @@ export default function Package({information}){
                 </div>
                 <div>
                     <p className="sub-header">ETA</p>
-                    <p className="detail">{information.eta}</p>
+                    <p className="detail">{neat_date}</p>
                 </div>
                 <div>
                     <p className="sub-header">Pickup Location</p>
