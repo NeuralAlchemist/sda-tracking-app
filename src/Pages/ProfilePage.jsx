@@ -1,18 +1,30 @@
-import { confirmAlert } from 'react-confirm-alert';
-import {useRecoilState} from "recoil";
-import {useEffect} from "react";
 
+import { useRecoilState } from "recoil";
+import { useCallback, useEffect, useState } from "react";
 
-import {userParcelData} from "../states/userParcelData";
+import { userParcelData } from "../states/userParcelData";
+import { confirmAlert } from "react-confirm-alert";
 
 
 export default function ProfilePage() {
-    const [userParcel, setUserParcelData] = useRecoilState(userParcelData);
+    const [userParcel, setUserParcel] = useRecoilState(userParcelData);
+    
+    const userName = userParcel[0].user_name;
+    const userPhone = userParcel[0].user_phone;
+    const API_URL = "https://my.api.mockaroo.com/orders.json?key=e49e6840";
+    const getData = useCallback(async () => {
+        const data = await fetch(
+            "https://my.api.mockaroo.com/orders.json?key=e49e6840"
+        );
+        const json = await data.json();
+        setUserParcel(json);
+    }, [setUserParcel]);
+
+    useEffect(() => {
+        getData();
+    }, [getData]);
 
     
-    useEffect(() => {
-        console.log(userParcel);
-    },[])
 
     function deleteModal() {
         confirmAlert({
@@ -26,19 +38,16 @@ export default function ProfilePage() {
             ],
         });
     }
-
-
-
     return (
         <div className="profile-page">
             <p className="profile-message">
-                Welcome Jhon Doe
+                Welcome {userName}
                 <br />
                 You are ready to track your packages
             </p>
             <div className="flex-for-phone-number">
                 <p className="profile-phone-number">
-                    +46 729478015{" "}
+                    {userPhone}{" "}
                     <button onClick={deleteModal} id="delete-phone-number">
                         X
                     </button>

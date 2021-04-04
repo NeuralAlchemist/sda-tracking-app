@@ -2,5 +2,5 @@ import {atom} from "recoil";
 
 export const userParcelData = atom({
     key:"userParcelData",
-    default:0,
+    default:require("../data/orders.json"),
 });
