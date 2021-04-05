@@ -12,6 +12,7 @@ import "./styles/profile.css";
 import ProfilePage from "./Pages/ProfilePage";
 import PackageListPage from "./Pages/PackageListPage";
 import QueryResultsPage from "./Pages/QueryResultsPage";
+import FetchData from "./FetchData";
 
 function App() {
     const [tabIndex, setTabIndex] = useState(0);
@@ -19,6 +20,7 @@ function App() {
     return (
         <div className="App">
             <RecoilRoot>
+                <FetchData/>
                 <BrowserRouter>
                     <Tabs
                         selectedIndex={tabIndex}
