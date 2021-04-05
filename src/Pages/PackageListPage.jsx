@@ -1,29 +1,19 @@
-import { useEffect, useState } from "react";
-
+// NPM packages
+import { useRecoilValue } from "recoil";
+// Project files
 import Package from "../components/Package";
+import { userParcelData } from "../states/userParcelData";
+
 export default function PackageListPage() {
-    const [userParcel, setUserParcel] = useState(
-        require("../data/orders.json")
-    );
-    const API_URL = "https://my.api.mockaroo.com/orders.json?key=e49e6840";
-
-    useEffect(() => {
-        fetch(API_URL)
-            .then((response) => response.json())
-            .then((json) => {
-                setUserParcel(json);
-            });
-    }, [setUserParcel]);
-
+    // Global states
+    const userParcel = useRecoilValue(userParcelData);
+    // Constants
     const packageArray = userParcel.map((item) => (
         <Package key={item.id} information={item} />
     ));
-    console.log(userParcel);
     return (
         <div>
-            <div className="package-grid">
-                {packageArray}
-            </div>
+            <div className="package-grid">{packageArray}</div>
         </div>
     );
 }
