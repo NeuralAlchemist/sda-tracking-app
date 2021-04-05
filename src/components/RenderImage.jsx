@@ -8,7 +8,6 @@ import {
 import DeliveredIcon from "../images/delivered.svg";
 import InfoReceivedIcon from "../images/info-order-received.svg";
 export default function RenderImage(props) {
-    console.log(props);
     switch (props.status) {
         case "order-info-received":
             return <img src={InfoReceivedIcon} alt="Info-Received"/>
