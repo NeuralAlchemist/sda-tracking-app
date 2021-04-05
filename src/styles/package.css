@@ -3,18 +3,31 @@
     border-bottom: 1px solid rgb(177, 173, 173);
 }
 
+p {
+    margin: 0;
+}
+
+.delivery-status svg, .delivery-status img {
+    padding-right: 5px;
+}
 .delivery-status {
+    display:flex;
+    justify-content: center;
     text-align: center;
     font-size: var(--mobile-large-font);
 }
 
 .package-details-grid {
     display: grid;
-    grid-template-columns: repeat( auto-fill, minmax(150px, 1fr) );
-    grid-column-gap:10px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-column-gap: 10px;
 }
 
-.sub-header{
+.package-details-grid > div {
+    padding-bottom: 1em;
+}
+
+.sub-header {
     font-size: var(--mobile-medium-font);
     color: var(--light-blue);
 }

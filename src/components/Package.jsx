@@ -1,30 +1,31 @@
-import "../styles/global.css"
-import "../styles/package.css"
 
-export default function Package({information}){
+
+import "../styles/global.css";
+import "../styles/package.css";
+import RenderImage from "../components/RenderImage";
+
+export default function Package({ information }) {
     let delivery_status;
-    let verification_required = information.verification_required? "Required" : "Not Required";
+    let verification_required = information.verification_required
+        ? "Required"
+        : "Not Required";
 
-    function Capitalize(data){
-        return(
-            data.charAt(0).toUpperCase() + data.slice(1)
-        );
+    function Capitalize(data) {
+        return data.charAt(0).toUpperCase() + data.slice(1);
     }
 
-    function GetReadableDate(date){
-        return date
-            .replace(/T/, " ") 
-            .replace(/\..+/, "")
-            .replace(/Z/,"");
+    function GetReadableDate(date) {
+        return date.replace(/T/, " ").replace(/\..+/, "").replace(/Z/, "");
+    }
+    function displayHello() {
+        console.log("Hello");
     }
     let neat_date = GetReadableDate(information.eta);
     console.log(neat_date);
     delivery_status = Capitalize(information.status);
-    return(
-        <article className="package">
-            <div className="delivery-status">
-                {delivery_status}
-            </div>
+    return (
+        <article className="package" onClick={displayHello}>
+            <div className="delivery-status"><RenderImage status={information.status}/>{delivery_status}</div>
             <div className="package-details-grid">
                 <div>
                     <p className="sub-header">Sender</p>
@@ -44,5 +45,5 @@ export default function Package({information}){
                 </div>
             </div>
         </article>
-    )
+    );
 }
