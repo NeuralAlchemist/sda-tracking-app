@@ -9,14 +9,18 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 import "./styles/App.css";
 import "./styles/global.css";
 import "./styles/profile.css";
+import "./styles/packagedetails.css"
 import ProfilePage from "./Pages/ProfilePage";
 import PackageListPage from "./Pages/PackageListPage";
 import QueryResultsPage from "./Pages/QueryResultsPage";
 import FetchData from "./FetchData";
 
 function App() {
+<<<<<<< Updated upstream
     const [tabIndex, setTabIndex] = useState(0);
 
+=======
+>>>>>>> Stashed changes
     return (
         <div className="App">
             <RecoilRoot>
