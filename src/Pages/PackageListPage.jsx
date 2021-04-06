@@ -12,7 +12,7 @@ export default function PackageListPage() {
         <Package key={item.id} information={item} />
     ));
     return (
-        <div>
+        <div className="page-container">
             <div className="package-grid">{packageArray}</div>
         </div>
     );

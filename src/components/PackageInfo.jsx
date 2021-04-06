@@ -41,38 +41,40 @@ export default function PackageInfo({ match }) {
                     <p>Back to all packages</p>
                 </div>
             </Link>
-            <article className="package">
-                <div className="delivery-status">
-                    <RenderImage status={parcel.status} />
-                    {Capitalize(parcel.status)}
-                </div>
-                <div className="package-details-grid">
-                    <div>
-                        <p className="sub-header">Sender</p>
-                        <p className="detail">{parcel.sender}</p>
+            <div className="page-container">
+                <article className="package">
+                    <div className="delivery-status">
+                        <RenderImage status={parcel.status} />
+                        {Capitalize(parcel.status)}
                     </div>
-                    <div>
-                        <p className="sub-header">ETA</p>
-                        <p className="detail">{neat_date}</p>
-                    </div>
-                    <div data-pickup={setPickupStatus()}>
-                        <p className="sub-header">Pickup Location</p>
-                        <p className="detail">{parcel.location_name}</p>
-                    </div>
-                    <div>
-                        <p className="sub-header">Verification</p>
-                        <p className="detail">{verification_required}</p>
+                    <div className="package-details-grid">
+                        <div>
+                            <p className="sub-header">Sender</p>
+                            <p className="detail">{parcel.sender}</p>
+                        </div>
+                        <div>
+                            <p className="sub-header">ETA</p>
+                            <p className="detail">{neat_date}</p>
+                        </div>
+                        <div data-pickup={setPickupStatus()}>
+                            <p className="sub-header">Pickup Location</p>
+                            <p className="detail">{parcel.location_name}</p>
+                        </div>
+                        <div>
+                            <p className="sub-header">Verification</p>
+                            <p className="detail">{verification_required}</p>
+                        </div>
+                        <div id="data-extra">
+                            <p className="sub-header">Parcel ID</p>
+                            <p className="detail">{parcel.parcel_id}</p>
+                        </div>
                     </div>
                     <div id="data-extra">
-                        <p className="sub-header">Parcel ID</p>
-                        <p className="detail">{parcel.parcel_id}</p>
+                        <p className="sub-header">Notes</p>
+                        <p className="detail">{parcel.notes}</p>
                     </div>
-                </div>
-                <div id="data-extra">
-                    <p className="sub-header">Notes</p>
-                    <p className="detail">{parcel.notes}</p>
-                </div>
-            </article>
+                </article>
+            </div>
         </div>
     );
 }
