@@ -1,12 +1,15 @@
+// NPM packages
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTruck, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 export default function TabLocal() {
+    // Local state
     const [tabIndex, setTabIndex] = useState(0);
+    // Constants
     const location = useLocation();
-
+    // Methods
     function checkPathToProfile() {
         return location.pathname === "/profile" || location.pathname === "/";
     }

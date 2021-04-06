@@ -1,18 +1,12 @@
-// NPM packages
 import { useRecoilValue } from "recoil";
 import { confirmAlert } from "react-confirm-alert";
-// Project files
 import { userParcelData } from "../states/userParcelData";
 import { LocalData } from "../states/LocalData";
-
 export default function ProfilePage() {
-    // Global states
     const userParcel = useRecoilValue(userParcelData);
     const local = useRecoilValue(LocalData);
-    // Local states
     let userName = userParcel[0].user_name;
     let userPhone = userParcel[0].user_phone;
-    // Methods
     function deleteModal() {
         confirmAlert({
             title: `Confirm to delete`,

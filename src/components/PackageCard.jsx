@@ -1,3 +1,4 @@
+// Project files
 import RenderImage from "./RenderImage";
 import capitalize from "../functions/capitalize";
 import getReadableDate from "../functions/getReadableDate";
@@ -5,6 +6,7 @@ import setPickupStatus from "../functions/setPickupStatus";
 import getVerificationInfo from "../functions/getVerificationInfo";
 import PackageSingleDetail from "./PackageSingleDetail";
 export default function PackageCard({ information }) {
+    // Constants
     let delivery_status = capitalize(information.status);
     let verification_required = getVerificationInfo(
         information.verification_required

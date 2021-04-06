@@ -1,6 +1,7 @@
+// NPM packages
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
-
+// Project files
 import "../styles/global.css";
 import "../styles/package.css";
 import { userParcelData } from "../states/userParcelData";
@@ -8,7 +9,7 @@ import getNeatNotes from "../functions/getNeatNotes";
 import PackageSingleDetail from "./PackageSingleDetail";
 import PackageCard from "./PackageCard";
 
-export default function PackageInfo({ match }) {
+export default function PackageExtendedCard({ match }) {
     // Global states
     const userParcel = useRecoilValue(userParcelData);
     // Constants
@@ -16,7 +17,6 @@ export default function PackageInfo({ match }) {
     const parcel = userParcel.find((item) => item.parcel_id === id);
     let notes = getNeatNotes(parcel.notes);
     let data_notes = parcel.notes === null;
-    console.log(data_notes);
 
     return (
         <div>

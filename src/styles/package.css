@@ -4,6 +4,7 @@
     cursor: pointer;
     text-decoration: none;
     grid-column-start: 2;
+    cursor: default;
 }
 
 a{
@@ -66,7 +67,6 @@ div[data-notes="true"]{
 .page-container {
     display: grid;
     grid-template-columns:  1fr minmax(200px,800px) 1fr;
-    cursor: default;
 }
 
 .package-grid {

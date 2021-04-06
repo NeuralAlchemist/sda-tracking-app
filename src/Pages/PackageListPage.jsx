@@ -1,7 +1,7 @@
 // NPM packages
 import { useRecoilValue } from "recoil";
 // Project files
-import Package from "../components/Package";
+import PackageList from "../components/PackageList";
 import { userParcelData } from "../states/userParcelData";
 
 export default function PackageListPage() {
@@ -9,7 +9,7 @@ export default function PackageListPage() {
     const userParcel = useRecoilValue(userParcelData);
     // Constants
     const packageArray = userParcel.map((item) => (
-        <Package key={item.id} information={item} />
+        <PackageList key={item.id} information={item} />
     ));
     return (
         <div className="page-container">

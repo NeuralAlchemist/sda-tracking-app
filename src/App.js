@@ -9,7 +9,7 @@ import ProfilePage from "./Pages/ProfilePage";
 import PackageListPage from "./Pages/PackageListPage";
 import QueryResultsPage from "./Pages/QueryResultsPage";
 import FetchData from "./components/FetchData";
-import PackageInfo from "./components/PackageInfo"
+import PackageExtendedCard from "./components/PackageExtendedCard"
 import TabLocal from "./components/TabLocal";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
                             path="/packagelist" exact
                             component={PackageListPage}
                         />
-                        <Route path="/packagelist/:id" component={PackageInfo}/>
+                        <Route path="/packagelist/:id" component={PackageExtendedCard}/>
                         <Route path="/results" component={QueryResultsPage} />
                     </Switch>
                 </BrowserRouter>
