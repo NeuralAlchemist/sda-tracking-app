@@ -35,13 +35,15 @@ export default function ProfilePage() {
                 <br />
                 You are ready to track your packages
             </p>
-            <div className="flex-for-phone-number">
-                <p className="profile-phone-number">
-                    {userPhone}{" "}
-                    <button onClick={deleteModal} id="delete-phone-number">
-                        X
-                    </button>
-                </p>
+            <div className="grid-for-phone-number">
+                <div className="grid-phone-details">
+                    <p className="profile-phone-number">
+                        {userPhone}{" "}
+                        <button onClick={deleteModal} id="delete-phone-number">
+                            X
+                        </button>
+                    </p>
+                </div>
             </div>
         </div>
     );

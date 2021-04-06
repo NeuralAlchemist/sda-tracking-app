@@ -18,10 +18,13 @@
     padding: 100px 0;
 }
 
-.flex-for-phone-number {
-    display: block;
-    text-align: center;
-    text-align: -webkit-centre;
+.grid-for-phone-number {
+    display: grid;
+    grid-template-columns:  1fr minmax(200px,400px) 1fr;
+}
+
+.grid-phone-details {
+    grid-column-start: 2;
 }
 .profile-phone-number {
     margin: 0 10px;
