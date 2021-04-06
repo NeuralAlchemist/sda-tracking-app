@@ -46,7 +46,7 @@ div[data-pickup="false"]{
     font-style: italic;
 }
 
-div[data-notes="false"]{
+div[data-notes="true"]{
     color: grey;
     font-style: italic;
 }
