@@ -1,38 +1,22 @@
-
-import Moment from "react-moment";
 import {Link} from "react-router-dom";
 
 import "../styles/global.css";
 import "../styles/package.css";
 import RenderImage from "./RenderImage";
-
+import capitalize from "../functions/capitalize";
+import getReadableDate from "../functions/getReadableDate";
+import setPickupStatus from "../functions/setPickupStatus";
+import getVerificationInfo from "../functions/getVerificationInfo";
 export default function Package({ information }) {
-    let delivery_status;
-    let verification_required = information.verification_required
-        ? "Required"
-        : "Not Required";
-
-    function Capitalize(data) {
-        return data.charAt(0).toUpperCase() + data.slice(1);
-    }
-
-    function GetReadableDate(date) {
-        return (
-            <Moment local format="YYYY-MM-DD HH:mm">
-                {date}
-            </Moment>
-        );
-    }
-
-    function setPickupStatus() {
-        return information.status === "ready-for-pickup";
-    }
-
-    let neat_date = GetReadableDate(information.eta);
-    delivery_status = Capitalize(information.status);
+    let verification_required = getVerificationInfo(
+        information.verification_required
+    );
+    let delivery_status = capitalize(information.status);
+    let eta = getReadableDate(information.eta);
+    let pickup_status = setPickupStatus(information.status);
     return (
         <article className="package">
-            <Link to={`packagelist/${information.parcel_id}`}>
+            <Link to={`packagelist/${information.information_id}`}>
                 <div className="delivery-status">
                     <RenderImage status={information.status} />
                     {delivery_status}
@@ -44,9 +28,9 @@ export default function Package({ information }) {
                     </div>
                     <div>
                         <p className="sub-header">ETA</p>
-                        <p className="detail">{neat_date}</p>
+                        <p className="detail">{eta}</p>
                     </div>
-                    <div data-pickup={setPickupStatus()}>
+                    <div data-pickup={pickup_status}>
                         <p className="sub-header">Pickup Location</p>
                         <p className="detail">{information.location_name}</p>
                     </div>

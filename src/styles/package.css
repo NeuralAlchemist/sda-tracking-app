@@ -46,6 +46,11 @@ div[data-pickup="false"]{
     font-style: italic;
 }
 
+div[data-notes="false"]{
+    color: grey;
+    font-style: italic;
+}
+
 .go-back-header {
     display: flex;
     font-size: x-large;
