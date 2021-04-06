@@ -32,7 +32,10 @@ export default function Package({ information }) {
     delivery_status = Capitalize(information.status);
     return (
         <article className="package">
-            <div className="delivery-status"><RenderImage status={information.status}/>{delivery_status}</div>
+            <div className="delivery-status">
+                <RenderImage status={information.status} />
+                {delivery_status}
+            </div>
             <div className="package-details-grid">
                 <div>
                     <p className="sub-header">Sender</p>
@@ -42,7 +45,7 @@ export default function Package({ information }) {
                     <p className="sub-header">ETA</p>
                     <p className="detail">{neat_date}</p>
                 </div>
-                <div>
+                <div data-pickup={setPickupStatus()}>
                     <p className="sub-header">Pickup Location</p>
                     <p className="detail">{information.location_name}</p>
                 </div>
@@ -51,20 +54,8 @@ export default function Package({ information }) {
                         <p className="sub-header">Sender</p>
                         <p className="detail">{information.sender}</p>
                     </div>
-                    <div>
-                        <p className="sub-header">ETA</p>
-                        <p className="detail">{neat_date}</p>
-                    </div>
-                    <div data-pickup={setPickupStatus()}>
-                        <p className="sub-header">Pickup Location</p>
-                        <p className="detail">{information.location_name}</p>
-                    </div>
-                    <div>
-                        <p className="sub-header">Verification</p>
-                        <p className="detail">{verification_required}</p>
-                    </div>
                 </div>
-                </div>
+            </div>
         </article>
     );
 }

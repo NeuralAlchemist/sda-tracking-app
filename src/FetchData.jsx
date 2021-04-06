@@ -36,7 +36,6 @@ export default function FetchData() {
 
     function onFetchSuccess(data) {
         console.log("Success fetch");
-        console.log(data);
         setUserParcel(data);
         setLocalData("false");
     }
