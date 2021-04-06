@@ -12,30 +12,27 @@ export default function FetchData() {
     // Constants
     const API_URL = "https://my.api.mockaroo.com/orders.json?key=e49e6840";
     // Methods
-    console.log("inside fetch data");
-    /* useEffect( () => {
-        const test = async() => {await fetch(API_URL)
-        .then((response) => {
-            console.log("Got response");
-            onFetchSuccess(response.json())})
-        .catch((error) => onFetchFail(error))};
-    },[setUserParcel, setLocalData]) */
-
-    /* useEffect(() => {
+    useEffect(() => {
         const test = async () => {
-            const result = await fetch(API_URL)
-                .then((response) => onFetchSuccess(response.json()))
-                .catch((error) => onFetchFail(error));
+            try {
+                const result = await fetch(API_URL);
+                console.log("Received data");
+                const data = await result.json();
+                console.log("Processed received data");
+                onFetchSuccess(data);
+            } catch(error) {
+                onFetchFail(error);
+            }
         };
         test();
-    }, [setUserParcel, setLocalData]); */
+    }, [setUserParcel, setLocalData]);
 
-    useEffect(() => {
+    /* useEffect(() => {
         fetch(API_URL)
             .then((response) => response.json())
             .then((data) => onFetchSuccess(data))
             .catch((error) => onFetchFail(error));
-    }, [setUserParcel, setLocalData]);
+    }, [setUserParcel, setLocalData]); */
 
     function onFetchSuccess(data) {
         console.log("Success fetch");
@@ -45,7 +42,7 @@ export default function FetchData() {
     }
 
     function onFetchFail(error) {
-        console.log(
+        console.error(
             `Failed to fetch from ${API_URL}. Local mock data in use. Error:${error}`
         );
     }

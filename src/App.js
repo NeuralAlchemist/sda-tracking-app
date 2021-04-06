@@ -16,11 +16,8 @@ import QueryResultsPage from "./Pages/QueryResultsPage";
 import FetchData from "./FetchData";
 
 function App() {
-<<<<<<< Updated upstream
     const [tabIndex, setTabIndex] = useState(0);
 
-=======
->>>>>>> Stashed changes
     return (
         <div className="App">
             <RecoilRoot>
