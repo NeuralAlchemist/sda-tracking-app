@@ -1,8 +1,8 @@
 
 export default function QueryResultsPage() {
     return (
-        <div>
-            This is the results page!
+        <div className="query-page">
+            Underconstruction for future use! 
         </div>
     )
 }

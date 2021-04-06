@@ -2,8 +2,8 @@
 import { useSetRecoilState, useRecoilState } from "recoil";
 import { useEffect } from "react";
 // Project files
-import { userParcelData } from "./states/userParcelData";
-import { LocalData } from "./states/LocalData";
+import { userParcelData } from "../states/userParcelData";
+import { LocalData } from "../states/LocalData";
 
 export default function FetchData() {
     // Global states
