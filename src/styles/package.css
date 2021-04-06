@@ -45,3 +45,13 @@ div[data-pickup="false"]{
     font-style: italic;
 }
 
+.go-back-header {
+    display: flex;
+    font-size: x-large;
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.back-button {
+    margin-right: 15px;
+    font-style: bold;
+}

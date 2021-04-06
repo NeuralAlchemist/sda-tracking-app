@@ -14,6 +14,8 @@ import ProfilePage from "./Pages/ProfilePage";
 import PackageListPage from "./Pages/PackageListPage";
 import QueryResultsPage from "./Pages/QueryResultsPage";
 import FetchData from "./FetchData";
+import Package from "./components/Package";
+import PackageInfo from "./components/PackageInfo"
 
 function App() {
     const [tabIndex, setTabIndex] = useState(0);
@@ -63,9 +65,10 @@ function App() {
                         <Route path="/" exact component={ProfilePage} />
                         <Route path="/profile" component={ProfilePage} />
                         <Route
-                            path="/packagelist"
+                            path="/packagelist" exact
                             component={PackageListPage}
                         />
+                        <Route path="/packagelist/:id" component={PackageInfo}/>
                         <Route path="/results" component={QueryResultsPage} />
                     </Switch>
                 </BrowserRouter>
