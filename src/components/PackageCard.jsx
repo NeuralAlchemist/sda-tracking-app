@@ -18,27 +18,21 @@ export default function PackageCard({ information }) {
                 {delivery_status}
             </div>
             <div className="package-details-grid">
-                <div>
-                    <PackageSingleDetail
-                        header="Sender"
-                        value={information.sender}
-                    />
-                </div>
-                <div>
-                    <PackageSingleDetail header="ETA" value={eta} />
-                </div>
+                <PackageSingleDetail
+                    header="Sender"
+                    value={information.sender}
+                />
+                <PackageSingleDetail header="ETA" value={eta} />
                 <div data-pickup={pickup_status}>
                     <PackageSingleDetail
                         header="Pickup Location"
                         value={information.location_name}
                     />
                 </div>
-                <div>
-                    <PackageSingleDetail
-                        header="Verification"
-                        value={verification_required}
-                    />
-                </div>
+                <PackageSingleDetail
+                    header="Verification"
+                    value={verification_required}
+                />
             </div>
         </>
     );

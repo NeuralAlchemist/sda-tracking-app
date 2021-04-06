@@ -1,3 +1,10 @@
+/*Logo*/
+.App h1 {
+    background-color: var(--yellow);
+    margin: 0;
+    text-align: center;
+}
+
 /* header */
 .react-tabs__tab-list {
     list-style-type: none;

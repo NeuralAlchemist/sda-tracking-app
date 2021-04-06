@@ -3,7 +3,7 @@ import { useRecoilValue } from "recoil";
 import { confirmAlert } from "react-confirm-alert";
 // Project files
 import { userParcelData } from "../states/userParcelData";
-import {LocalData} from "../states/LocalData";
+import { LocalData } from "../states/LocalData";
 
 export default function ProfilePage() {
     // Global states
@@ -16,7 +16,7 @@ export default function ProfilePage() {
     function deleteModal() {
         confirmAlert({
             title: `Confirm to delete`,
-            message: `Are you sure you want to delete?`,
+            message: `Are you sure you want to delete ${userPhone}?`,
             buttons: [
                 {
                     label: `No`,

@@ -9,7 +9,6 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 import "./styles/App.css";
 import "./styles/global.css";
 import "./styles/profile.css";
-import "./styles/packagedetails.css"
 import ProfilePage from "./Pages/ProfilePage";
 import PackageListPage from "./Pages/PackageListPage";
 import QueryResultsPage from "./Pages/QueryResultsPage";
@@ -25,6 +24,7 @@ function App() {
             <RecoilRoot>
                 <FetchData/>
                 <BrowserRouter>
+                <h1>Yellow Postal</h1>
                     <Tabs
                         selectedIndex={tabIndex}
                         onSelect={(index) => setTabIndex(index)}
