@@ -4,6 +4,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This react application was developed as part of the cirriculum at SDA9. My goals with this implementation were to understand and use Recoil, functional components, hooks and to seamlessly use external components.
 
+## Contents
+
+- [Description](#description)
+- [Dependencies](#dependencies)
+- [Setup](#setup)
+- [Approach](#approach)
+
 ## Description
 
 The website immediately fetches data from a mock API concerning a single user and therefore requires no login. The profile page displays the user's phone number and name. On the tracking page, all the parcels are listed for an easy overview. Clicking on any of the parcels will take you to a detailed view of the parcel.
