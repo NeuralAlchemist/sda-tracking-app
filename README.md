@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Yellow Postal's Tracking App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This react application was developed as part of the cirriculum at SDA9. My goals with this implementation were to understand and use Recoil, functional components, hooks and to seamlessly use external components.
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+The website immediately fetches data from a mock API concerning a single user and therefore requires no login. The profile page displays the user's phone number and name. On the tracking page, all the parcels are listed for an easy overview. Clicking on any of the parcels will take you to a detailed view of the parcel.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Dependencies
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React 17.0.2
+- Recoil 0.2.0
+- React Tabs 3.2.1
+- React Moment 1.1.1
+- React Confirm Alert 2.7.0
+- React Router DOM 5.2.0
 
-### `npm test`
+## Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this application 
 
-### `npm run build`
+- Clone this repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  `git clone git@github.com:NeuralAlchemist/sda-tracking-app.git`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-  Navigate to the project folder on your machine and install the dependencies with `npm install` . This takes a few minutes to complete.
+- After the installation is finished, run the NPM script `start ` via IDE or console. Console command is `npm run start`. This will locally host the application at [localhost](http://localhost:3000) and may open automatically as soon as the start script is run.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Approach
 
-### `npm run eject`
+The application's major goal was simplistic and minimal UI without taking away any useful information from the application. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- The application opens into the profile page so the user is immediately aware of the login credentials used. Many tracking application open up directly to tracking page, they often require login authentication. Since this application does not use authentication, it seemed a good idea to immediately show who the application thinks is logged in.
+- The tracking page is very simply laid out with crucial information that a user would like to see at a glance. One thing that can definitely be improved here is adding the option of archiving delivered parcels.
+- The detailed information that shows up after clicking on a parcel is also minimal at this point. A functionality that is very much in the future work is adding a simple interactive map to show the location of the parcel in this page.
+- To keep the header minimal, a tabbed header was used which will always show the user immediately where they are within the application.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
