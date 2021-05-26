@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This react application was developed as part of the cirriculum at SDA9. My goals with this implementation were to understand and use Recoil, functional components, hooks and to seamlessly use external components.
+This react application was developed as part of the cirriculum at SDA9. My goals with this implementation were to understand and use Recoil, functional components, hooks and to seamlessly use external components. The website is deployed via firebase [here](https://sda-parcel-tracking-app.firebaseapp.com)
 
 ## Contents
 
